@@ -72,11 +72,11 @@ var zhihuTurndownService = function (htmlContent) {
         replacement: function (content, node) {
             let description = "";
             if (node.innerHTML.search("<figcaption>") != -1) {
-                description = node.innerHTML.replace(/^.*?<figcaption>(.*?)<\/figcaption>.*?$/, "$1")
+                description = node.innerHTML.replace(/^.*?<figcaption>(.*?)<\/figcaption>.*?$/, "$1");
             }
             return '![]('
                 + node.innerHTML.replace(/^.*?src="(.*?)".*?$/, "$1") + ')  \n'
-                + description
+                + description;
         }
     });
 
@@ -135,6 +135,17 @@ var csdnTurndownService = function (htmlContent) {
     let gfm = turndownPluginGfm.gfm;
     turndownService.use(gfm);
 
+    turndownService.addRule('script', {
+        filter: function (node, options) {
+            return (
+                node.nodeName === 'SCRIPT'
+            );
+        },
+        replacement: function (content, node) {
+            return "";
+        }
+    });
+
     let mainTitles = htmlDoc.getElementsByClassName('title-article');
     let title = "";
     if (mainTitles.length === 0) {
@@ -186,7 +197,7 @@ var aliyunTurndownService = function (htmlContent) {
             );
         },
         replacement: function (content, node) {
-            return '\n```\n' + node.innerText + '\n```\n'
+            return '\n```\n' + node.innerText + '\n```\n';
         }
     });
 
@@ -301,7 +312,7 @@ var juejinTurndownService = function (htmlContent) {
             );
         },
         replacement: function (content, node) {
-            return ""
+            return "";
         }
     });
 
@@ -444,13 +455,13 @@ var jianshuTurndownService = function (htmlContent) {
         replacement: function (content, node) {
             // 注意多行公式与内联公式
             if (node.outerHTML.search("math-inline") != -1) {
-                return '$' + node.outerHTML.replace(/^.*?alt="(.*?) *?".*?$/, "$1") + '$'
+                return '$' + node.outerHTML.replace(/^.*?alt="(.*?) *?".*?$/, "$1") + '$';
             }
             if (node.outerHTML.search("math-block") != -1) {
-                return '\n$$\n' + node.outerHTML.replace(/^.*?alt="(.*?) *?".*?$/, "$1") + '\n$$\n'
+                return '\n$$\n' + node.outerHTML.replace(/^.*?alt="(.*?) *?".*?$/, "$1") + '\n$$\n';
             }
         }
-    })
+    });
 
     let title = "";
     let mainTitles = [];
@@ -516,7 +527,7 @@ var planetmathTurndownService = function (htmlContent) {
                 tempstr = '$' + myplanetmathstr + '$';
             }
             else if (node.getAttribute('display') === 'block') {
-                tempstr = '\n$$\n' + myplanetmathstr + '\n$$\n'
+                tempstr = '\n$$\n' + myplanetmathstr + '\n$$\n';
             }
             else {
 
