@@ -1,5 +1,4 @@
-var defaultTurndownService = function (htmlContent) {
-
+var defaultTurndownService = (function (htmlContent) {
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
     let mdContent = "失败！";
@@ -23,9 +22,9 @@ var defaultTurndownService = function (htmlContent) {
 
     mdContent = turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var zhihuTurndownService = function (htmlContent) {
+var zhihuTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -110,9 +109,9 @@ var zhihuTurndownService = function (htmlContent) {
 
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var csdnTurndownService = function (htmlContent) {
+var csdnTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -153,9 +152,9 @@ var csdnTurndownService = function (htmlContent) {
 
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var aliyunTurndownService = function (htmlContent) {
+var aliyunTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -207,9 +206,9 @@ var aliyunTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var tencentTurndownService = function (htmlContent) {
+var tencentTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -268,9 +267,9 @@ var tencentTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var juejinTurndownService = function (htmlContent) {
+var juejinTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -341,9 +340,9 @@ var juejinTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var cnblogsTurndownService = function (htmlContent) {
+var cnblogsTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -408,9 +407,9 @@ var cnblogsTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var jianshuTurndownService = function (htmlContent) {
+var jianshuTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -475,9 +474,9 @@ var jianshuTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var planetmathTurndownService = function (htmlContent) {
+var planetmathTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -572,9 +571,9 @@ var planetmathTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var oschinaTurndownService = function (htmlContent) {
+var oschinaTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -620,9 +619,9 @@ var oschinaTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var segmentfaultTurndownService = function (htmlContent) {
+var segmentfaultTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -663,9 +662,9 @@ var segmentfaultTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var writebugTurndownService = function (htmlContent) {
+var writebugTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -706,9 +705,9 @@ var writebugTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var luoguTurndownService = function (htmlContent) {
+var luoguTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -749,9 +748,9 @@ var luoguTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var cxymmTurndownService = function (htmlContent) {
+var cxymmTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -798,9 +797,9 @@ var cxymmTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var srcminiTurndownService = function (htmlContent) {
+var srcminiTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -841,9 +840,9 @@ var srcminiTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var _51ctoTurndownService = function (htmlContent) {
+var _51ctoTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -895,9 +894,9 @@ var _51ctoTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var cbianchengTurndownService = function (htmlContent) {
+var cbianchengTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -957,9 +956,9 @@ var cbianchengTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var infoqTurndownService = function (htmlContent) {
+var infoqTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1012,9 +1011,9 @@ var infoqTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var imoocTurndownService = function (htmlContent) {
+var imoocTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1067,9 +1066,9 @@ var imoocTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var sspaiTurndownService = function (htmlContent) {
+var sspaiTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1109,9 +1108,9 @@ var sspaiTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var leetcodeTurndownService = function (htmlContent) {
+var leetcodeTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1163,51 +1162,9 @@ var leetcodeTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var baiduTurndownService = function (htmlContent) {
-
-    let htmlDoc = document.createElement('html');
-    htmlDoc.innerHTML = htmlContent;
-    let mdContent = "失败！";
-    let tempContent = htmlContent;
-
-    let turndownService = new TurndownService({
-        headingStyle: 'atx',
-        hr: '* * *',
-        bulletListMarker: '-',
-        codeBlockStyle: 'fenced',
-        fence: '```',
-        emDelimiter: '*',
-        strongDelimiter: '**',
-        linkStyle: 'inlined',
-        linkReferenceStyle: 'full',
-        preformattedCode: false
-    });
-
-    let gfm = turndownPluginGfm.gfm;
-    turndownService.use(gfm);
-
-    let title = "";
-    let mainTitles = htmlDoc.getElementsByTagName('h1');
-    if (mainTitles.length === 0) {
-        title = "# 无标题\n\n";
-    }
-    else {
-        title = "# " + mainTitles[0].innerText.trim() + "\n\n";
-    }
-
-    let mainContents = htmlDoc.getElementsByClassName('markdown-body');
-    if (mainContents.length === 0) {
-        return mdContent;
-    }
-
-    tempContent = mainContents[0].innerHTML;
-    mdContent = title + turndownService.turndown(tempContent);
-    return mdContent;
-}
-
-var learnkuTurndownService = function (htmlContent) {
+var baiduTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1247,9 +1204,51 @@ var learnkuTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var helloworldTurndownService = function (htmlContent) {
+var learnkuTurndownService = (function (htmlContent) {
+
+    let htmlDoc = document.createElement('html');
+    htmlDoc.innerHTML = htmlContent;
+    let mdContent = "失败！";
+    let tempContent = htmlContent;
+
+    let turndownService = new TurndownService({
+        headingStyle: 'atx',
+        hr: '* * *',
+        bulletListMarker: '-',
+        codeBlockStyle: 'fenced',
+        fence: '```',
+        emDelimiter: '*',
+        strongDelimiter: '**',
+        linkStyle: 'inlined',
+        linkReferenceStyle: 'full',
+        preformattedCode: false
+    });
+
+    let gfm = turndownPluginGfm.gfm;
+    turndownService.use(gfm);
+
+    let title = "";
+    let mainTitles = htmlDoc.getElementsByTagName('h1');
+    if (mainTitles.length === 0) {
+        title = "# 无标题\n\n";
+    }
+    else {
+        title = "# " + mainTitles[0].innerText.trim() + "\n\n";
+    }
+
+    let mainContents = htmlDoc.getElementsByClassName('markdown-body');
+    if (mainContents.length === 0) {
+        return mdContent;
+    }
+
+    tempContent = mainContents[0].innerHTML;
+    mdContent = title + turndownService.turndown(tempContent);
+    return mdContent;
+}());
+
+var helloworldTurndownService = (function (htmlContent) {
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
     let mdContent = "失败！";
@@ -1288,9 +1287,9 @@ var helloworldTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
 
-var itpubTurndownService = function (htmlContent) {
+var itpubTurndownService = (function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1330,4 +1329,4 @@ var itpubTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
-}
+}());
