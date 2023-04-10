@@ -1,4 +1,95 @@
-function defaultTurndownService(htmlContent) {
+document.getElementById("start").onclick = function () {
+    let htmlContent = document.querySelector(".e1").value;
+    let selObj = document.querySelector('select');
+    let selId = selObj.value;
+    let mdContent = html2md(selId, htmlContent);
+    document.querySelector(".e2").value = mdContent;
+};
+
+function html2md(selId, htmlContent) {
+    let mdContent = "失败！";
+    if (selId === 'default') {
+        mdContent = defaultTurndownService(htmlContent);
+    }
+    else if (selId === 'zhihu') {
+        mdContent = zhihuTurndownService(htmlContent);
+    }
+    else if (selId === 'csdn') {
+        mdContent = csdnTurndownService(htmlContent);
+    }
+    else if (selId === 'aliyun') {
+        mdContent = aliyunTurndownService(htmlContent);
+    }
+    else if (selId === 'tencent') {
+        mdContent = tencentTurndownService(htmlContent);
+    }
+    else if (selId === 'juejin') {
+        mdContent = juejinTurndownService(htmlContent);
+    }
+    else if (selId === 'cnblogs') {
+        mdContent = cnblogsTurndownService(htmlContent);
+    }
+    else if (selId === 'jianshu') {
+        mdContent = jianshuTurndownService(htmlContent);
+    }
+    else if (selId === 'planetmath') {
+        mdContent = planetmathTurndownService(htmlContent);
+    }
+    else if (selId === 'oschina') {
+        mdContent = oschinaTurndownService(htmlContent);
+    }
+    else if (selId === 'segmentfault') {
+        mdContent = segmentfaultTurndownService(htmlContent);
+    }
+    else if (selId === 'writebug') {
+        mdContent = writebugTurndownService(htmlContent);
+    }
+    else if (selId === 'luogu') {
+        mdContent = luoguTurndownService(htmlContent);
+    }
+    else if (selId === 'cxymm') {
+        mdContent = cxymmTurndownService(htmlContent);
+    }
+    else if (selId === 'srcmini') {
+        mdContent = srcminiTurndownService(htmlContent);
+    }
+    else if (selId === '51cto') {
+        mdContent = _51ctoTurndownService(htmlContent);
+    }
+    else if (selId === 'cbiancheng') {
+        mdContent = cbianchengTurndownService(htmlContent);
+    }
+    else if (selId === 'infoq') {
+        mdContent = infoqTurndownService(htmlContent);
+    }
+    else if (selId === 'imooc') {
+        mdContent = imoocTurndownService(htmlContent);
+    }
+    else if (selId === 'sspai') {
+        mdContent = sspaiTurndownService(htmlContent);
+    }
+    else if (selId === 'leetcode') {
+        mdContent = leetcodeTurndownService(htmlContent);
+    }
+    else if (selId === 'baidu') {
+        mdContent = baiduTurndownService(htmlContent);
+    }
+    else if (selId === 'learnku') {
+        mdContent = learnkuTurndownService(htmlContent);
+    }
+    else if (selId === 'helloworld') {
+        mdContent = helloworldTurndownService(htmlContent);
+    }
+    else if (selId === 'itpub') {
+        mdContent = itpubTurndownService(htmlContent);
+    }
+    else {
+        console.log("错误");
+    }
+    return mdContent;
+}
+
+var defaultTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -25,7 +116,7 @@ function defaultTurndownService(htmlContent) {
     return mdContent;
 }
 
-function zhihuTurndownService(htmlContent) {
+var zhihuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -112,7 +203,7 @@ function zhihuTurndownService(htmlContent) {
     return mdContent;
 }
 
-function csdnTurndownService(htmlContent) {
+var csdnTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -155,7 +246,7 @@ function csdnTurndownService(htmlContent) {
     return mdContent;
 }
 
-function aliyunTurndownService(htmlContent) {
+var aliyunTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -209,7 +300,7 @@ function aliyunTurndownService(htmlContent) {
     return mdContent;
 }
 
-function tencentTurndownService(htmlContent) {
+var tencentTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -242,10 +333,10 @@ function tencentTurndownService(htmlContent) {
         replacement: function (content, node) {
             // 注意多行公式与内联公式
             let name = node.parentNode.nodeName;
-            if(name === 'FIGURE'){
+            if (name === 'FIGURE') {
                 return "\n$$\n" + node.innerText + "\n$$\n";
             }
-            else{
+            else {
                 return '$' + node.innerText + '$';
             }
         }
@@ -270,7 +361,7 @@ function tencentTurndownService(htmlContent) {
     return mdContent;
 }
 
-function juejinTurndownService(htmlContent) {
+var juejinTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -309,16 +400,16 @@ function juejinTurndownService(htmlContent) {
     turndownService.addRule('math', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'IMG'&&
-                node['alt'].length>0
+                node.nodeName === 'IMG' &&
+                node['alt'].length > 0
             );
         },
         replacement: function (content, node) {
             let name = node.parentNode.nodeName;
-            if(name === 'FIGURE'){
+            if (name === 'FIGURE') {
                 return "\n$$\n" + node['alt'] + "\n$$\n";
             }
-            else{
+            else {
                 return "$" + node['alt'] + "$";
             }
         }
@@ -343,7 +434,7 @@ function juejinTurndownService(htmlContent) {
     return mdContent;
 }
 
-function cnblogsTurndownService(htmlContent) {
+var cnblogsTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -375,7 +466,7 @@ function cnblogsTurndownService(htmlContent) {
             );
         },
         replacement: function (content, node) {
-            return node.innerText.replace(/\\\((.*)\\\)/,'$$$1$$');
+            return node.innerText.replace(/\\\((.*)\\\)/, '$$$1$$');
         }
     });
 
@@ -387,7 +478,7 @@ function cnblogsTurndownService(htmlContent) {
             );
         },
         replacement: function (content, node) {
-            return node.innerText.replace(/\\\[(.*)\\\]/,'\n$$$$\n$1\n$$$$\n');
+            return node.innerText.replace(/\\\[(.*)\\\]/, '\n$$$$\n$1\n$$$$\n');
         }
     });
 
@@ -410,7 +501,7 @@ function cnblogsTurndownService(htmlContent) {
     return mdContent;
 }
 
-function jianshuTurndownService(htmlContent) {
+var jianshuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -455,8 +546,8 @@ function jianshuTurndownService(htmlContent) {
     let title = "";
     let mainTitles = [];
     let tempTitles = htmlDoc.getElementsByTagName('h1');
-    for(let i=0;i<tempTitles.length;i++){
-        if(tempTitles[i].getAttribute('title').length>0){
+    for (let i = 0; i < tempTitles.length; i++) {
+        if (tempTitles[i].getAttribute('title').length > 0) {
             mainTitles.push(tempTitles[i]);
         }
     }
@@ -477,7 +568,7 @@ function jianshuTurndownService(htmlContent) {
     return mdContent;
 }
 
-function planetmathTurndownService(htmlContent) {
+var planetmathTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -528,36 +619,36 @@ function planetmathTurndownService(htmlContent) {
     turndownService.addRule('ax', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'A'&&
+                node.nodeName === 'A' &&
                 node.getAttribute('class') === 'nnexus_concepts'
             );
         },
         replacement: function (content, node) {
-            return node.innerText;            
+            return node.innerText;
         }
     });
 
     turndownService.addRule('supx', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'SUP'&&
+                node.nodeName === 'SUP' &&
                 node.getAttribute('style') === 'display: none;'
             );
         },
         replacement: function (content, node) {
-            return "";            
+            return "";
         }
     });
 
     turndownService.addRule('imgx', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'IMG'&&
+                node.nodeName === 'IMG' &&
                 node.getAttribute('alt') === 'Mathworld'
             );
         },
         replacement: function (content, node) {
-            return "";            
+            return "";
         }
     });
 
@@ -574,7 +665,7 @@ function planetmathTurndownService(htmlContent) {
     return mdContent;
 }
 
-function oschinaTurndownService(htmlContent) {
+var oschinaTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -600,8 +691,8 @@ function oschinaTurndownService(htmlContent) {
     let mainTitles = [];
     let title = "";
     let tempTitles = htmlDoc.getElementsByTagName('h1');
-    for(let i=0;i<tempTitles.length;i++){
-        if(tempTitles[i].getAttribute('class') === "article-box__title"){
+    for (let i = 0; i < tempTitles.length; i++) {
+        if (tempTitles[i].getAttribute('class') === "article-box__title") {
             mainTitles.push(tempTitles[i]);
         }
     }
@@ -622,7 +713,7 @@ function oschinaTurndownService(htmlContent) {
     return mdContent;
 }
 
-function segmentfaultTurndownService(htmlContent) {
+var segmentfaultTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -665,7 +756,7 @@ function segmentfaultTurndownService(htmlContent) {
     return mdContent;
 }
 
-function writebugTurndownService(htmlContent) {
+var writebugTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -708,7 +799,7 @@ function writebugTurndownService(htmlContent) {
     return mdContent;
 }
 
-function luoguTurndownService(htmlContent) {
+var luoguTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -751,7 +842,7 @@ function luoguTurndownService(htmlContent) {
     return mdContent;
 }
 
-function cxymmTurndownService(htmlContent) {
+var cxymmTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -778,8 +869,8 @@ function cxymmTurndownService(htmlContent) {
     let mainTitles = [];
     let title = "";
     let tempTitles = htmlDoc.getElementsByTagName('h2');
-    for(let i=0;i<tempTitles.length;i++){
-        if(tempTitles[i].getAttribute('style') === "line-height: 32px;"){
+    for (let i = 0; i < tempTitles.length; i++) {
+        if (tempTitles[i].getAttribute('style') === "line-height: 32px;") {
             mainTitles.push(tempTitles[i]);
         }
     }
@@ -800,7 +891,7 @@ function cxymmTurndownService(htmlContent) {
     return mdContent;
 }
 
-function srcminiTurndownService(htmlContent) {
+var srcminiTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -843,7 +934,7 @@ function srcminiTurndownService(htmlContent) {
     return mdContent;
 }
 
-function _51ctoTurndownService(htmlContent) {
+var _51ctoTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -897,7 +988,7 @@ function _51ctoTurndownService(htmlContent) {
     return mdContent;
 }
 
-function cbianchengTurndownService(htmlContent) {
+var cbianchengTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -928,7 +1019,7 @@ function cbianchengTurndownService(htmlContent) {
             );
         },
         replacement: function (content, node) {
-            return '\n\n```' + node.className +'\n' + node.innerText + '\n```\n\n';
+            return '\n\n```' + node.className + '\n' + node.innerText + '\n```\n\n';
         }
     });
 
@@ -944,8 +1035,8 @@ function cbianchengTurndownService(htmlContent) {
     let mainContents = [];
     let tempDivs = htmlDoc.getElementsByTagName('div');
 
-    for(let i=0;i<tempDivs.length;i++){
-        if(tempDivs[i].id === 'arc-body'){
+    for (let i = 0; i < tempDivs.length; i++) {
+        if (tempDivs[i].id === 'arc-body') {
             mainContents.push(tempDivs[i]);
         }
     }
@@ -959,7 +1050,7 @@ function cbianchengTurndownService(htmlContent) {
     return mdContent;
 }
 
-function infoqTurndownService(htmlContent) {
+var infoqTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -986,7 +1077,7 @@ function infoqTurndownService(htmlContent) {
     turndownService.addRule('removecopy', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'DIV'&&
+                node.nodeName === 'DIV' &&
                 node.hasAttribute('data-codeblock-copy')
             );
         },
@@ -1014,7 +1105,7 @@ function infoqTurndownService(htmlContent) {
     return mdContent;
 }
 
-function imoocTurndownService(htmlContent) {
+var imoocTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1041,7 +1132,7 @@ function imoocTurndownService(htmlContent) {
     turndownService.addRule('removeshowmore', {
         filter: function (node, options) {
             return (
-                node.nodeName === 'DIV'&&
+                node.nodeName === 'DIV' &&
                 node.className === 'showMore'
             );
         },
@@ -1069,7 +1160,7 @@ function imoocTurndownService(htmlContent) {
     return mdContent;
 }
 
-function sspaiTurndownService(htmlContent) {
+var sspaiTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1111,7 +1202,7 @@ function sspaiTurndownService(htmlContent) {
     return mdContent;
 }
 
-function leetcodeTurndownService(htmlContent) {
+var leetcodeTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1165,7 +1256,7 @@ function leetcodeTurndownService(htmlContent) {
     return mdContent;
 }
 
-function baiduTurndownService(htmlContent) {
+var baiduTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1207,7 +1298,7 @@ function baiduTurndownService(htmlContent) {
     return mdContent;
 }
 
-function learnkuTurndownService(htmlContent) {
+var learnkuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1249,7 +1340,7 @@ function learnkuTurndownService(htmlContent) {
     return mdContent;
 }
 
-function helloworldTurndownService(htmlContent) {
+var helloworldTurndownService = function (htmlContent) {
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
     let mdContent = "失败！";
@@ -1290,7 +1381,7 @@ function helloworldTurndownService(htmlContent) {
     return mdContent;
 }
 
-function itpubTurndownService(htmlContent) {
+var itpubTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
