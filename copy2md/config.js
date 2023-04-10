@@ -135,17 +135,6 @@ var csdnTurndownService = function (htmlContent) {
     let gfm = turndownPluginGfm.gfm;
     turndownService.use(gfm);
 
-    turndownService.addRule('script', {
-        filter: function (node, options) {
-            return (
-                node.nodeName === 'SCRIPT'
-            );
-        },
-        replacement: function (content, node) {
-            return "";
-        }
-    });
-
     let mainTitles = htmlDoc.getElementsByClassName('title-article');
     let title = "";
     if (mainTitles.length === 0) {
