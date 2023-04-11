@@ -1,6 +1,5 @@
-var convert = function (source) {
+var convert = function (host,source) {
             var result = "";
-            var host = window.location.host;
             if (host.includes("zhihu")) {
                 result = zhihuTurndownService(source);
             }
