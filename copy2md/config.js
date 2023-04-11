@@ -72,6 +72,9 @@ var convert2md = function (host, source) {
     else if (host.includes("itpub")) {
         result = itpubTurndownService(source);
     }
+    else if (host.includes("iotword")) {
+        result = iotwordTurndownService(source);
+    }
     else {
         result = host;
     }
