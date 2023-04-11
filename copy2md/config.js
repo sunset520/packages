@@ -1,82 +1,82 @@
-var convert = function (host,source) {
-            var result = "";
-            if (host.includes("zhihu")) {
-                result = zhihuTurndownService(source);
-            }
-            else if (host.includes("csdn")) {
-                result = csdnTurndownService(source);
-            }
-            else if (host.includes("aliyun")) {
-                result = aliyunTurndownService(source);
-            }
-            else if (host.includes("tencent")) {
-                result = tencentTurndownService(source);
-            }
-            else if (host.includes("juejin")) {
-                result = juejinTurndownService(source);
-            }
-            else if (host.includes("cnblogs")) {
-                result = cnblogsTurndownService(source);
-            }
-            else if (host.includes("jianshu")) {
-                result = jianshuTurndownService(source);
-            }
-            else if (host.includes("planetmath")) {
-                result = planetmathTurndownService(source);
-            }
-            else if (host.includes("oschina")) {
-                result = oschinaTurndownService(source);
-            }
-            else if (host.includes("segmentfault")) {
-                result = segmentfaultTurndownService(source);
-            }
-            else if (host.includes("writebug")) {
-                result = writebugTurndownService(source);
-            }
-            else if (host.includes("luogu")) {
-                result = luoguTurndownService(source);
-            }
-            else if (host.includes("cxymm")) {
-                result = cxymmTurndownService(source);
-            }
-            else if (host.includes("srcmini")) {
-                result = srcminiTurndownService(source);
-            }
-            else if (host.includes("51cto")) {
-                result = _51ctoTurndownService(source);
-            }
-            else if (host.includes("biancheng")) {
-                result = cbianchengTurndownService(source);
-            }
-            else if (host.includes("infoq")) {
-                result = infoqTurndownService(source);
-            }
-            else if (host.includes("imooc")) {
-                result = imoocTurndownService(source);
-            }
-            else if (host.includes("sspai")) {
-                result = sspaiTurndownService(source);
-            }
-            else if (host.includes("leetcode")) {
-                result = leetcodeTurndownService(source);
-            }
-            else if (host.includes("baidu")) {
-                result = baiduTurndownService(source);
-            }
-            else if (host.includes("learnku")) {
-                result = learnkuTurndownService(source);
-            }
-            else if (host.includes("helloworld")) {
-                result = helloworldTurndownService(source);
-            }
-            else if (host.includes("itpub")) {
-                result = itpubTurndownService(source);
-            }
-            else {
-                result = host;
-            }
-            return result;
-        };
+var convert2md = function (host, source) {
+    var result = "";
+    if (host.includes("zhihu")) {
+        result = zhihuTurndownService(source);
+    }
+    else if (host.includes("csdn")) {
+        result = csdnTurndownService(source);
+    }
+    else if (host.includes("aliyun")) {
+        result = aliyunTurndownService(source);
+    }
+    else if (host.includes("tencent")) {
+        result = tencentTurndownService(source);
+    }
+    else if (host.includes("juejin")) {
+        result = juejinTurndownService(source);
+    }
+    else if (host.includes("cnblogs")) {
+        result = cnblogsTurndownService(source);
+    }
+    else if (host.includes("jianshu")) {
+        result = jianshuTurndownService(source);
+    }
+    else if (host.includes("planetmath")) {
+        result = planetmathTurndownService(source);
+    }
+    else if (host.includes("oschina")) {
+        result = oschinaTurndownService(source);
+    }
+    else if (host.includes("segmentfault")) {
+        result = segmentfaultTurndownService(source);
+    }
+    else if (host.includes("writebug")) {
+        result = writebugTurndownService(source);
+    }
+    else if (host.includes("luogu")) {
+        result = luoguTurndownService(source);
+    }
+    else if (host.includes("cxymm")) {
+        result = cxymmTurndownService(source);
+    }
+    else if (host.includes("srcmini")) {
+        result = srcminiTurndownService(source);
+    }
+    else if (host.includes("51cto")) {
+        result = _51ctoTurndownService(source);
+    }
+    else if (host.includes("biancheng")) {
+        result = cbianchengTurndownService(source);
+    }
+    else if (host.includes("infoq")) {
+        result = infoqTurndownService(source);
+    }
+    else if (host.includes("imooc")) {
+        result = imoocTurndownService(source);
+    }
+    else if (host.includes("sspai")) {
+        result = sspaiTurndownService(source);
+    }
+    else if (host.includes("leetcode")) {
+        result = leetcodeTurndownService(source);
+    }
+    else if (host.includes("baidu")) {
+        result = baiduTurndownService(source);
+    }
+    else if (host.includes("learnku")) {
+        result = learnkuTurndownService(source);
+    }
+    else if (host.includes("helloworld")) {
+        result = helloworldTurndownService(source);
+    }
+    else if (host.includes("itpub")) {
+        result = itpubTurndownService(source);
+    }
+    else {
+        result = host;
+    }
+    return result;
+};
 
 var defaultTurndownService = function (htmlContent) {
 
