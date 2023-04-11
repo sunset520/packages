@@ -1394,7 +1394,62 @@ var itpubTurndownService = function (htmlContent) {
     turndownService.use(gfm);
 
     let title = "";
-    let mainTitles = htmlDoc.getElementsByTagName('h3');
+    let mainTitles = htmlDoc.getElementsByTagName('h1');
+    if (mainTitles.length === 0) {
+        let mainTitles2 = htmlDoc.getElementsByTagName('h3');
+        if(mainTitles2.length === 0){
+            title = "# 无标题\n\n";
+        }
+        else {
+            title = "# " + mainTitles2[0].innerText.trim() + "\n\n";
+        }
+    }
+    else {
+        title = "# " + mainTitles[0].innerText.trim() + "\n\n";
+    }
+
+    let mainContents = htmlDoc.getElementsByClassName('preview-main');
+    if (mainContents.length === 0) {
+        let mainContents2 = htmlDoc.getElementsByClassName('content');
+        if (mainContents2.length === 0) {
+            return mdContent;
+        }
+        else {
+            tempContent = mainContents2[0].innerHTML;
+        }
+    }
+    else {
+        tempContent = mainContents[0].innerHTML;
+    }
+    mdContent = title + turndownService.turndown(tempContent);
+    return mdContent;
+};
+
+var iotwordTurndownService = function (htmlContent) {
+
+    let htmlDoc = document.createElement('html');
+    htmlDoc.innerHTML = htmlContent;
+    let mdContent = "失败！";
+    let tempContent = htmlContent;
+
+    let turndownService = new TurndownService({
+        headingStyle: 'atx',
+        hr: '* * *',
+        bulletListMarker: '-',
+        codeBlockStyle: 'fenced',
+        fence: '```',
+        emDelimiter: '*',
+        strongDelimiter: '**',
+        linkStyle: 'inlined',
+        linkReferenceStyle: 'full',
+        preformattedCode: false
+    });
+
+    let gfm = turndownPluginGfm.gfm;
+    turndownService.use(gfm);
+
+    let title = "";
+    let mainTitles = htmlDoc.getElementsByTagName('h1');
     if (mainTitles.length === 0) {
         title = "# 无标题\n\n";
     }
@@ -1402,7 +1457,7 @@ var itpubTurndownService = function (htmlContent) {
         title = "# " + mainTitles[0].innerText.trim() + "\n\n";
     }
 
-    let mainContents = htmlDoc.getElementsByClassName('content');
+    let mainContents = htmlDoc.getElementsByClassName('entry-content');
     if (mainContents.length === 0) {
         return mdContent;
     }
