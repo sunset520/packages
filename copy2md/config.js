@@ -1,87 +1,4 @@
-var convert2md = function (host, source) {
-    var result = "";
-    if (host.includes("zhihu")) {
-        result = zhihuTurndownService(source);
-    }
-    else if (host.includes("csdn")) {
-        result = csdnTurndownService(source);
-    }
-    else if (host.includes("aliyun")) {
-        result = aliyunTurndownService(source);
-    }
-    else if (host.includes("tencent")) {
-        result = tencentTurndownService(source);
-    }
-    else if (host.includes("juejin")) {
-        result = juejinTurndownService(source);
-    }
-    else if (host.includes("cnblogs")) {
-        result = cnblogsTurndownService(source);
-    }
-    else if (host.includes("jianshu")) {
-        result = jianshuTurndownService(source);
-    }
-    else if (host.includes("planetmath")) {
-        result = planetmathTurndownService(source);
-    }
-    else if (host.includes("oschina")) {
-        result = oschinaTurndownService(source);
-    }
-    else if (host.includes("segmentfault")) {
-        result = segmentfaultTurndownService(source);
-    }
-    else if (host.includes("writebug")) {
-        result = writebugTurndownService(source);
-    }
-    else if (host.includes("luogu")) {
-        result = luoguTurndownService(source);
-    }
-    else if (host.includes("cxymm")) {
-        result = cxymmTurndownService(source);
-    }
-    else if (host.includes("srcmini")) {
-        result = srcminiTurndownService(source);
-    }
-    else if (host.includes("51cto")) {
-        result = _51ctoTurndownService(source);
-    }
-    else if (host.includes("biancheng")) {
-        result = cbianchengTurndownService(source);
-    }
-    else if (host.includes("infoq")) {
-        result = infoqTurndownService(source);
-    }
-    else if (host.includes("imooc")) {
-        result = imoocTurndownService(source);
-    }
-    else if (host.includes("sspai")) {
-        result = sspaiTurndownService(source);
-    }
-    else if (host.includes("leetcode")) {
-        result = leetcodeTurndownService(source);
-    }
-    else if (host.includes("baidu")) {
-        result = baiduTurndownService(source);
-    }
-    else if (host.includes("learnku")) {
-        result = learnkuTurndownService(source);
-    }
-    else if (host.includes("helloworld")) {
-        result = helloworldTurndownService(source);
-    }
-    else if (host.includes("itpub")) {
-        result = itpubTurndownService(source);
-    }
-    else if (host.includes("iotword")) {
-        result = iotwordTurndownService(source);
-    }
-    else {
-        result = host;
-    }
-    return result;
-};
-
-var defaultTurndownService = function (htmlContent) {
+let defaultTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -108,7 +25,7 @@ var defaultTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var zhihuTurndownService = function (htmlContent) {
+let zhihuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -195,7 +112,7 @@ var zhihuTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var csdnTurndownService = function (htmlContent) {
+let csdnTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -238,7 +155,7 @@ var csdnTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var aliyunTurndownService = function (htmlContent) {
+let aliyunTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -292,7 +209,7 @@ var aliyunTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var tencentTurndownService = function (htmlContent) {
+let tencentTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -353,7 +270,7 @@ var tencentTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var juejinTurndownService = function (htmlContent) {
+let juejinTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -426,7 +343,7 @@ var juejinTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var cnblogsTurndownService = function (htmlContent) {
+let cnblogsTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -493,7 +410,7 @@ var cnblogsTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var jianshuTurndownService = function (htmlContent) {
+let jianshuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -560,7 +477,7 @@ var jianshuTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var planetmathTurndownService = function (htmlContent) {
+let planetmathTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -657,7 +574,7 @@ var planetmathTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var oschinaTurndownService = function (htmlContent) {
+let oschinaTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -705,7 +622,7 @@ var oschinaTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var segmentfaultTurndownService = function (htmlContent) {
+let segmentfaultTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -748,7 +665,7 @@ var segmentfaultTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var writebugTurndownService = function (htmlContent) {
+let writebugTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -791,7 +708,7 @@ var writebugTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var luoguTurndownService = function (htmlContent) {
+let luoguTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -834,7 +751,7 @@ var luoguTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var cxymmTurndownService = function (htmlContent) {
+let cxymmTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -883,7 +800,7 @@ var cxymmTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var srcminiTurndownService = function (htmlContent) {
+let srcminiTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -926,7 +843,7 @@ var srcminiTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var _51ctoTurndownService = function (htmlContent) {
+let _51ctoTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -980,7 +897,7 @@ var _51ctoTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var cbianchengTurndownService = function (htmlContent) {
+let cbianchengTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1042,7 +959,7 @@ var cbianchengTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var infoqTurndownService = function (htmlContent) {
+let infoqTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1097,7 +1014,7 @@ var infoqTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var imoocTurndownService = function (htmlContent) {
+let imoocTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1152,7 +1069,7 @@ var imoocTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var sspaiTurndownService = function (htmlContent) {
+let sspaiTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1194,7 +1111,7 @@ var sspaiTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var leetcodeTurndownService = function (htmlContent) {
+let leetcodeTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1248,7 +1165,7 @@ var leetcodeTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var baiduTurndownService = function (htmlContent) {
+let baiduTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1290,7 +1207,7 @@ var baiduTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var learnkuTurndownService = function (htmlContent) {
+let learnkuTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1332,7 +1249,7 @@ var learnkuTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var helloworldTurndownService = function (htmlContent) {
+let helloworldTurndownService = function (htmlContent) {
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
     let mdContent = "失败！";
@@ -1373,7 +1290,7 @@ var helloworldTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var itpubTurndownService = function (htmlContent) {
+let itpubTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1428,7 +1345,7 @@ var itpubTurndownService = function (htmlContent) {
     return mdContent;
 };
 
-var iotwordTurndownService = function (htmlContent) {
+let iotwordTurndownService = function (htmlContent) {
 
     let htmlDoc = document.createElement('html');
     htmlDoc.innerHTML = htmlContent;
@@ -1468,4 +1385,45 @@ var iotwordTurndownService = function (htmlContent) {
     tempContent = mainContents[0].innerHTML;
     mdContent = title + turndownService.turndown(tempContent);
     return mdContent;
+};
+
+let keys = {
+    'default': defaultTurndownService,
+    'zhihu': zhihuTurndownService,
+    'csdn': csdnTurndownService,
+    'aliyun': aliyunTurndownService,
+    'tencent': tencentTurndownService,
+    'juejin': juejinTurndownService,
+    'cnblogs': cnblogsTurndownService,
+    'jianshu': jianshuTurndownService,
+    'planetmath': planetmathTurndownService,
+    'oschina': oschinaTurndownService,
+    'segmentfault': segmentfaultTurndownService,
+    'writebug': writebugTurndownService,
+    'luogu': luoguTurndownService,
+    'cxymm': cxymmTurndownService,
+    'srcmini': srcminiTurndownService,
+    '51cto': _51ctoTurndownService,
+    'biancheng': cbianchengTurndownService,
+    'infoq': infoqTurndownService,
+    'imooc': imoocTurndownService,
+    'sspai': sspaiTurndownService,
+    'leetcode': leetcodeTurndownService,
+    'baidu': baiduTurndownService,
+    'learnku': learnkuTurndownService,
+    'helloworld': helloworldTurndownService,
+    'itpub': itpubTurndownService,
+    'iotword': iotwordTurndownService
+};
+
+let convert2md = function (host, html) {
+    let func = defaultTurndownService;
+    for(let key in keys){
+        if (host.includes(key)) {
+            func = keys[key];
+            break;
+        }
+    }
+    let md = func(html);
+    return md;
 };
